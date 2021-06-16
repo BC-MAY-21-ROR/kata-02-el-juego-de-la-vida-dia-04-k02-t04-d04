@@ -47,7 +47,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Never committed
+          Updated <time class='js-timeago' datetime='2021-06-15 18:38:16 -0500'>2021-06-15 18:38:16 -0500</time>
         
       </span>
     </div>
@@ -73,7 +73,7 @@
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.3</span><small> complexity/method</small></div>
-              <div><span class="metric">0</span><small> churn</small></div>
+              <div><span class="metric">1</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">16.69</span><small> complexity</small></div>
@@ -88,7 +88,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                4
+                2
                 smells
               </a>
             </li>
@@ -110,10 +110,10 @@ class Display
 
   def prints<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>Display#prints has approx 6 statements</span>          </div>  </li></ol>
     puts &quot;Generation #{@generation}&quot;
-    (0..@long - 1).each do |i|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Display#prints has the variable name 'i'</span>          </div>  </li></ol>
+    (0..@long - 1).each do |long|
       cadena = &#39;&#39;
-      (0..@width - 1).each do |x|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md" target="_blank"><b>NestedIterators</b></a>        </span>      </div>      <span>Display#prints contains iterators nested 2 deep</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Display#prints has the variable name 'x'</span>          </div>  </li></ol>
-        cadena += @matrix[i][x]
+      (0..@width - 1).each do |width|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md" target="_blank"><b>NestedIterators</b></a>        </span>      </div>      <span>Display#prints contains iterators nested 2 deep</span>          </div>  </li></ol>
+        cadena += @matrix[long][width]
       end
       puts cadena
     end

@@ -11,10 +11,10 @@ class Display
 
   def prints
     puts "Generation #{@generation}"
-    (0..@long - 1).each do |i|
+    (0..@long - 1).each do |long|
       cadena = ''
-      (0..@width - 1).each do |x|
-        cadena += @matrix[i][x]
+      (0..@width - 1).each do |width|
+        cadena += @matrix[long][width]
       end
       puts cadena
     end

@@ -13,19 +13,19 @@ class Grid
   end
 
   def create_matrix
-    @long.times do |i|
+    @long.times do |long|
       @matriz.push([])
-      @width.times do |_j|
-        @matriz[i].push([' . ', ' * '].sample)
+      @width.times do |width|
+        @matriz[long].push([' . ', ' * '].sample)
       end
     end
-    kill_cells_in_borders
+    kill_cells_in_borders()
   end
 
   def kill_cells_in_borders
-    (0..@long - 1).each do |i|
-      (0..@width - 1).each do |x|
-        @matriz[i][x] = ' . ' if i.zero? || (i == @long - 1) || x.zero? || (x == @width - 1)
+    (0..@long - 1).each do |long|
+      (0..@width - 1).each do |width|
+        @matriz[long][width] = ' . ' if long.zero? || (long == @long - 1) || width.zero? || (width == @width - 1)
       end
     end
   end

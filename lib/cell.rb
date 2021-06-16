@@ -8,17 +8,12 @@ class Cell
   end
 
   def change_state
-    neighbours_lives = @neighbours
-
-    # Condiciones
-    # celula viva con mas de 3 vecinos vivos muere
-    @status = ' . ' if neighbours_lives > 3 && @status == ' * '
-
-    # celula viva con menor de dos vecinos vivos muere
-    @status = ' . ' if neighbours_lives < 2 && @status == ' * '
+    # Condiciones de acuerdo a los requerimientos de la kata
+    # celula viva con mas de 3 vecinos o menos de 2 vecinos vivos muere
+    @status = ' . ' if (@neighbours > 3 || @neighbours < 2) && @status == ' * '
 
     # celula muerta con 3 vecinos vivos  revive
-    @status = ' * ' if neighbours_lives == 3 && @status == ' . '
+    @status = ' * ' if @neighbours == 3 && @status == ' . '
   end
 
   def new_status

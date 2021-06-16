@@ -47,7 +47,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Never committed
+          Updated <time class='js-timeago' datetime='2021-06-15 18:38:16 -0500'>2021-06-15 18:38:16 -0500</time>
         
       </span>
     </div>
@@ -73,7 +73,7 @@
             </div>
             <div class="col-md-3">
               <div><span class="metric">27.4</span><small> complexity/method</small></div>
-              <div><span class="metric">0</span><small> churn</small></div>
+              <div><span class="metric">1</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">109.79</span><small> complexity</small></div>
@@ -88,7 +88,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                21
+                19
                 smells
               </a>
             </li>
@@ -118,12 +118,12 @@ class Main<ol class="nocode errors smells">  <li>    <div class="description">  
   end
 
   def check_neighbours<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>Main#check_neighbours has approx 6 statements</span>          </div>  </li></ol>
-    (1..@long_grid - 2).each do |i|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Main#check_neighbours has the variable name 'i'</span>          </div>  </li></ol>
-      (1..@width_grid - 2).each do |j|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md" target="_blank"><b>NestedIterators</b></a>        </span>      </div>      <span>Main#check_neighbours contains iterators nested 2 deep</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Main#check_neighbours has the variable name 'j'</span>          </div>  </li></ol>
-        status = @matrix[i][j]<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Main#check_neighbours calls '@matrix[i]' 2 times</span>              <span>Locations:</span>                  <a href="main.html#L24" class="js-smell-location">0</a>                  <a href="main.html#L27" class="js-smell-location">1</a>                  </div>  </li></ol>
-        cell = Cell.new(status, arround_cell(i, j))
+    (1..@long_grid - 2).each do |long|
+      (1..@width_grid - 2).each do |width|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md" target="_blank"><b>NestedIterators</b></a>        </span>      </div>      <span>Main#check_neighbours contains iterators nested 2 deep</span>          </div>  </li></ol>
+        status = @matrix[long][width]<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Main#check_neighbours calls '@matrix[long]' 2 times</span>              <span>Locations:</span>                  <a href="main.html#L24" class="js-smell-location">0</a>                  <a href="main.html#L27" class="js-smell-location">1</a>                  </div>  </li></ol>
+        cell = Cell.new(status, arround_cell(long, width))
         cell.change_state
-        @matrix[i][j] = cell.new_status<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Main#check_neighbours calls '@matrix[i]' 2 times</span>              <span>Locations:</span>                  <a href="main.html#L24" class="js-smell-location">0</a>                  <a href="main.html#L27" class="js-smell-location">1</a>                  </div>  </li></ol>
+        @matrix[long][width] = cell.new_status<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Main#check_neighbours calls '@matrix[long]' 2 times</span>              <span>Locations:</span>                  <a href="main.html#L24" class="js-smell-location">0</a>                  <a href="main.html#L27" class="js-smell-location">1</a>                  </div>  </li></ol>
       end
     end
   end

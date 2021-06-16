@@ -19,12 +19,12 @@ class Main
   end
 
   def check_neighbours
-    (1..@long_grid - 2).each do |i|
-      (1..@width_grid - 2).each do |j|
-        status = @matrix[i][j]
-        cell = Cell.new(status, arround_cell(i, j))
+    (1..@long_grid - 2).each do |long|
+      (1..@width_grid - 2).each do |width|
+        status = @matrix[long][width]
+        cell = Cell.new(status, arround_cell(long, width))
         cell.change_state
-        @matrix[i][j] = cell.new_status
+        @matrix[long][width] = cell.new_status
       end
     end
   end
