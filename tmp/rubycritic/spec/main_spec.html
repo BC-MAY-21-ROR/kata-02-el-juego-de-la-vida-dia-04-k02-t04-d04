@@ -68,7 +68,7 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">12</span><small> lines of codes</small></div>
+              <div><span class="metric">19</span><small> lines of codes</small></div>
               <div><span class="metric">0</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
@@ -76,7 +76,7 @@
               <div><span class="metric">2</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">3.1</span><small> complexity</small></div>
+              <div><span class="metric">28.84</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -97,17 +97,24 @@
       </div>
     </div>
 
-    <code class="prettyprint linenums lang-ruby file-code js-file-code">require &#39;main&#39;
+    <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
+
+require &#39;main&#39;
 require &#39;grid&#39;
 
 RSpec.describe Main do
-  let(:grid) { Grid.new(6,5) }
+  let(:grid) { Grid.new(6, 5) }
+  let(:main) { Main.new(6, 5) }
 
-  # context &quot;validate neighbours&quot; do
-  #   it &quot;count neighbours&quot; do
-      
-  #   end
-  # end
+  # Validacion para verificar que el conteo de celulas vivas no regrese en numeros negativos
+  context &#39;count arround_cells&#39; do
+    it &#39;count neighbours&#39; do
+      grid.create_matrix
+      matriz = grid.matrix
+      matriz[1][1] = &#39; * &#39;
+      expect(main.arround_cell(1, 1)).not_to be &lt; 0
+    end
+  end
 end
 </code>
   </div>

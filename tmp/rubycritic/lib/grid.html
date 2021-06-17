@@ -114,11 +114,11 @@ class Grid
   def create_matrix
     @long.times do |long|
       @matriz.push([])
-      @width.times do |width|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md" target="_blank"><b>NestedIterators</b></a>        </span>      </div>      <span>Grid#create_matrix contains iterators nested 2 deep</span>          </div>  </li></ol>
+      @width.times do |_width|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md" target="_blank"><b>NestedIterators</b></a>        </span>      </div>      <span>Grid#create_matrix contains iterators nested 2 deep</span>          </div>  </li></ol>
         @matriz[long].push([&#39; . &#39;, &#39; * &#39;].sample)
       end
     end
-    kill_cells_in_borders()
+    kill_cells_in_borders
   end
 
   def kill_cells_in_borders

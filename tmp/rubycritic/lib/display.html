@@ -68,15 +68,15 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">23</span><small> lines of codes</small></div>
+              <div><span class="metric">24</span><small> lines of codes</small></div>
               <div><span class="metric">2</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">8.3</span><small> complexity/method</small></div>
+              <div><span class="metric">9.3</span><small> complexity/method</small></div>
               <div><span class="metric">2</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">16.69</span><small> complexity</small></div>
+              <div><span class="metric">18.54</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -88,7 +88,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                2
+                3
                 smells
               </a>
             </li>
@@ -108,12 +108,13 @@ class Display
     @generation = generation
   end
 
-  def prints<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>Display#prints has approx 6 statements</span>          </div>  </li></ol>
+  def prints<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>Display#prints has approx 7 statements</span>          </div>  </li></ol>
     puts &quot;Generation #{@generation}&quot;
     (0..@long - 1).each do |long|
       cadena = &#39;&#39;
+      @matrix[long] ||= []<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Display#prints calls '@matrix[long]' 2 times</span>              <span>Locations:</span>                  <a href="display.html#L16" class="js-smell-location">0</a>                  <a href="display.html#L18" class="js-smell-location">1</a>                  </div>  </li></ol>
       (0..@width - 1).each do |width|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md" target="_blank"><b>NestedIterators</b></a>        </span>      </div>      <span>Display#prints contains iterators nested 2 deep</span>          </div>  </li></ol>
-        cadena += @matrix[long][width]
+        cadena += @matrix[long][width].to_s<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Display#prints calls '@matrix[long]' 2 times</span>              <span>Locations:</span>                  <a href="display.html#L16" class="js-smell-location">0</a>                  <a href="display.html#L18" class="js-smell-location">1</a>                  </div>  </li></ol>
       end
       puts cadena
     end
