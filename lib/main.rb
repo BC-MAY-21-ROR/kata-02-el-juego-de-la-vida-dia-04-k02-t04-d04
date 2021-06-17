@@ -6,22 +6,21 @@ require_relative 'display'
 
 # clase main
 class Main
-  def initialize
-    puts('Ancho de la matriz: ')
-    @width_grid = gets.chomp.to_i
-    puts('Largo de la matriz: ')
-    @long_grid = gets.chomp.to_i
-
+  def initialize(width, long)
+    @width_grid = width
+    @long_grid = long
     @grid = Grid.new(@width_grid, @long_grid)
     @grid.create_matrix
 
     print_display
   end
 
+  # Metodo encargado de verificar los vecinos para ver si la celula cambia o no de estatus
   def check_neighbours
     (1..@long_grid - 2).each do |long|
       (1..@width_grid - 2).each do |width|
         status = @matrix[long][width]
+        # Invocar clase Cell para ver si cumple alguna condicion de las establecidas para cambiar de estatus
         cell = Cell.new(status, arround_cell(long, width))
         cell.change_state
         @matrix[long][width] = cell.new_status
@@ -29,6 +28,7 @@ class Main
     end
   end
 
+  # Metodo encargado de contar cuantas celulas vivas tiene de vecino cada celula ya sea muerta o viva
   def arround_cell(long, width)
     neighbours_live = 0
     neighbours_live += 1 if @matrix[long - 1][width - 1] == ' * '
@@ -55,4 +55,8 @@ class Main
   end
 end
 
-main = Main.new
+puts('Ancho de la matriz: ')
+width = gets.chomp.to_i
+puts('Largo de la matriz: ')
+long = gets.chomp.to_i
+main = Main.new(width, long)
