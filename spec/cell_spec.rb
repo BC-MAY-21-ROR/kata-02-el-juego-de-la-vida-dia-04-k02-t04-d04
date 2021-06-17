@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'cell'
 require 'grid'
 
 RSpec.describe Cell do
-  let(:grid) { Grid.new(6,5) }
+  let(:grid) { Grid.new(6, 5) }
   context 'test to kill one cell for overcrowding' do
     it 'kill cell' do
       grid.create_matrix
@@ -36,8 +38,8 @@ RSpec.describe Cell do
     end
   end
 
-  context "return status" do
-    it "the return is not empty" do
+  context 'return status' do
+    it 'the return is not empty' do
       grid.create_matrix
       matriz = grid.matrix
       matriz[1][1] = ' . '
